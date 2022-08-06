@@ -2,7 +2,7 @@
   <v-app>
     <v-main>
     <v-container>
-      <navbar v-if="$store.state.isLogged"/>
+      <navbar v-if="$store.state.isLogged" />
       <v-row >
       <v-col>
         <router-view/>

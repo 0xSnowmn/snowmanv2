@@ -4,8 +4,6 @@ import router from '../router/index'
 var moment = require("moment")
 window.axios = require('axios')
 axios.defaults.baseURL = 'https://snoworg.herokuapp.com/api';
-var token = localStorage.getItem('token')
-axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
 
 Vue.use(Vuex)
 
@@ -41,6 +39,7 @@ export default new Vuex.Store({
     changeToLogin (state,token) {
       state.isLogged = true
       state.token = token
+      axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
       localStorage.setItem('token',token)
     },
     appendPrograms(state,programs){

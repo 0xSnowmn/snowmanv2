@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import router from '../router/index'
 var moment = require("moment")
 window.axios = require('axios')
-axios.defaults.baseURL = 'http://127.0.0.1:8000/api';
+axios.defaults.baseURL = 'https://snoworg.herokuapp.com/api';
 var token = localStorage.getItem('token')
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
 
